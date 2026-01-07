@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="csrf-token"
+      content="pcJ3HLfhrXBr0YI4BzoYvOLKnbqUYyHZUMePQzw7"
+    />
+
+    <title>POKIES PALACE - PROMOTION</title>
+
+    <link rel="icon" href="images/pokiespalace.ico" />
+
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/poppins" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/montserrat" />
+
+    <script src="js/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <script src="js/all.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css/sweetalert2.min.css" />
+    <script src="js/sweetalert2.min.js"></script>
+
+    <script src="js/api.js"></script>
+
+    <script src="js/func.js"></script>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/plugins.js"></script>
+
+    <style>
+      :root {
+        --desktop-top: url(images/top-bg_1.png);
+        --desktop-mid: url(images/mid-bg_1.png);
+        --desktop-btm: url(images/btm-bg_1.png);
+        --mobile-top: url(images/top-bg.png);
+        --mobile-mid: url(images/mid-bg.png);
+        --mobile-btm: url(images/btm-bg.png);
+        --phone-frame: url(images/phone-frame.png);
+      }
+    </style>
+    <script>
+      const lang = "en";
+      const country = "my";
+      const version = "v3";
+    </script>
+
+    <link rel="stylesheet" href="css/custom.min.css" />
+    <script src="js/custom.min.js"></script>
+
+    <style>
+      /* Custom dropdown styling */
+      select.form-control {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        padding-right: 30px;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 10px center;
+        background-size: 18px;
+        background-color: white;
+        cursor: pointer;
+      }
+
+      select.form-control::-ms-expand {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <link href="css/custom.min_1.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <script src="js/mobile-detect.min.js"></script>
+
+    <div class="contact-us">
+      <div id="top-banner" class="redirect-banner-container">
+        <div class="row m-0 h-100 d-flex flex-nowrap align-items-center">
+          <div class="col-2 p-0 bp-icon">
+            <div
+              class="d-flex align-items-center justify-content-center icon-img ml-auto mr-3"
+            >
+              <img src="images/pokiespalace-icon.png" />
+            </div>
+          </div>
+          <div class="col-4 redirect-text">
+            <p class="m-0">Looking for our homepage?</p>
+          </div>
+          <div class="col-3 p-0 m-auto d-flex justify-content-center">
+            <div
+              id="redirect"
+              class="d-flex flex-nowrap align-items-center justify-content-center ml-auto redirect-button"
+            >
+              <div class="redirect-banner">ENTER POKIES PALACE</div>
+            </div>
+          </div>
+          <div class="col-2 ml-2 p-0">
+            <span id="close-button" class="redirect-banner-close">×</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-side-panel d-flex flex-nowrap">
+        <div id="contact-us-close-button" class="contact-us-close-button">
+          X
+        </div>
+        <div class="d-flex flex-nowrap align-items-center">
+          <p>NEED HELP?</p>
+          <div class="content-container">
+            <div class="contact-content">
+              <a id="live-chat"
+                ><img
+                  class="contact-us-icon"
+                  src="images/livechat.png"
+                  alt="Live Chat Icon"
+                  title="Live Chat"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const redirectButton = document.getElementById("redirect");
+        const closeButton = document.getElementById("close-button");
+        const topBanner = document.getElementById("top-banner");
+        const liveChat = document.getElementById("live-chat");
+        const contactUsCloseButton = document.getElementById(
+          "contact-us-close-button"
+        );
+        const sitename = "[pokiespalace]";
+
+        var contactPanel = document.querySelector(".contact-side-panel");
+        var contactContainer = document.querySelector(".content-container");
+        var contactContents = document.querySelectorAll(".contact-content");
+        var bodyInner = document.querySelector(".body-inner");
+
+        var country = $('[name="country"]').val();
+        var lang = $('[name="lang"]').val();
+
+        handleResize();
+
+        redirectButton.addEventListener("click", function (e) {
+          var queryString = new URLSearchParams(window.location.search);
+          var platform = "";
+          var md = new MobileDetect(window.navigator.userAgent);
+
+          if (md.mobile()) {
+            platform = "M";
+          } else {
+            platform = "D";
+          }
+          function getParameterByName(param) {
+            const url = new URL(window.location);
+            const params = new URLSearchParams(url.search); // Extract search parameters
+            // Accessing specific parameter values
+            return params.get(param).toUpperCase();
+          }
+
+          const redirectURL = `https://pokiespalace.com/?lang=${getParameterByName(
+            "country"
+          )}_${getParameterByName("lang")}`;
+
+          window.location.href = redirectURL;
+        });
+
+        closeButton.addEventListener("click", function () {
+          topBanner.style.display = "none";
+          bodyInner.style.marginTop = "0";
+        });
+
+        contactUsCloseButton.addEventListener("click", function () {
+          contactPanel.style.setProperty("display", "none", "important");
+        });
+
+        liveChat.addEventListener("click", function () {
+          idStack = {
+            bp77: {
+              ID: {
+                EN: 40,
+                ID: 41,
+              },
+              TH: {
+                EN: 38,
+                TH: 39,
+              },
+              SG: {
+                EN: 36,
+                ZH: 37,
+              },
+              MY: {
+                EN: 34,
+                ZH: 35,
+              },
+            },
+            bp9: {
+              ID: {
+                EN: 72,
+                ID: 72,
+              },
+              TH: {
+                EN: 38,
+                TH: 39,
+              },
+              SG: {
+                EN: 36,
+                ZH: 37,
+              },
+              MY: {
+                EN: 34,
+                ZH: 35,
+              },
+            },
+            "12huat": {
+              SG: {
+                EN: 88,
+                ZH: 88,
+              },
+              MY: {
+                EN: 85,
+                ZH: 85,
+              },
+            },
+            ed98: {
+              SG: {
+                EN: 92,
+                ZH: 92,
+              },
+              MY: {
+                EN: 89,
+                ZH: 89,
+              },
+            },
+            pokiespalace: {
+              SG: {
+                EN: 92,
+                ZH: 92,
+              },
+              MY: {
+                EN: 89,
+                ZH: 89,
+              },
+            },
+            u388: {
+              SG: {
+                EN: 104,
+                ZH: 104,
+              },
+              MY: {
+                EN: 103,
+                ZH: 103,
+              },
+            },
+          };
+
+          var groupId =
+            idStack[sitename][country.toUpperCase()][lang.toUpperCase()];
+          var liveChatURL =
+            "https://secure.livechatinc.com/licence/10515072/v2/open_chat.cgi?group=" +
+            groupId;
+
+          window.location.href = liveChatURL;
+        });
+
+        function handleResize() {
+          var imageCount = contactContents.length;
+          var img = contactContents[0].querySelector("img");
+          var imageComputedStyle = window.getComputedStyle(img);
+          var imageHeight = parseFloat(imageComputedStyle.width) + 8;
+          var totalHeight = imageCount * imageHeight;
+          contactPanel.style.height = totalHeight + "px";
+          bodyInner.style.marginTop = topBanner.clientHeight - 1 + "px";
+        }
+        window.addEventListener("resize", handleResize);
+      });
+    </script>
+
+    <div class="body-inner position-relative">
+      <div
+        id="register-form-wrap"
+        class="container text-center m-0 claim-form"
+        style="display: none"
+      >
+        <div class="mt-1 text01">ENTER YOUR DETAILS TO CLAIM YOUR</div>
+        <div class="mt-1 mb-3 text02">50 FREE SPINS!</div>
+        <form id="register-form" class="form-container">
+          <div id="section_1">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              class="form-control"
+              oninput="dynamicInputValidation(event, 12, 'MY')"
+              onblur="validateUsername(event,12)"
+              placeholder="Username"
+              required=""
+            />
+            <div
+              id="div__err-msg-username"
+              class="flex-column d-none mb-1 err-msg-container"
+            >
+              <p
+                class="p__username-minmax d-flex align-items-center justify-content-between mb-0"
+              >
+                >Between 6 to 16 characters
+              </p>
+              <p
+                class="p__username-special d-flex align-items-center justify-content-between mb-0"
+              >
+                No special characters allowed
+              </p>
+              <p
+                class="p__username-alphanum-or-alpha d-flex align-items-center justify-content-between mb-0 text-left"
+              >
+                Consists of letters and numbers OR letters only
+              </p>
+            </div>
+            <div
+              id="div__err-msg-username-duplicate"
+              class="flex-column d-none mb-2 err-msg-container"
+            >
+              <p
+                class="p__username-duplicate d-flex align-items-center justify-content-between mb-0"
+              >
+                Username is already taken
+              </p>
+            </div>
+
+            <input
+              type="password"
+              name="password"
+              id="password"
+              class="form-control"
+              oninput="dynamicInputValidation(event, 12, 'MY')"
+              placeholder="Password"
+              required=""
+            />
+            <div
+              id="div__err-msg-password"
+              class="flex-column d-none mb-1 err-msg-container"
+            >
+              <p
+                class="p__password-min d-flex align-items-center justify-content-between mb-0"
+              >
+                At least 6 characters
+              </p>
+            </div>
+
+            <input
+              type="password"
+              name="password_confirmation"
+              id="password_confirmation"
+              class="form-control"
+              oninput="dynamicInputValidation(event, 12, 'MY')"
+              placeholder="Confirm Password"
+              required=""
+            />
+            <div
+              id="div__err-msg-password_confirmation"
+              class="flex-column d-none mb-1 err-msg-container"
+            >
+              <p
+                class="p__password_confirmation-not-matched d-flex align-items-center justify-content-between mb-0"
+              >
+                Password not matched
+              </p>
+            </div>
+
+            <input
+              type="text"
+              name="email"
+              id="email"
+              class="form-control"
+              oninput="dynamicInputValidation(event, 12, 'MY')"
+              placeholder="Email (Optional)"
+            />
+            <div
+              id="div__err-msg-email"
+              class="flex-column d-none mb-1 err-msg-container"
+            >
+              <p
+                class="p__email-invalid d-flex align-items-center justify-content-between mb-0"
+              >
+                Invalid email format
+              </p>
+            </div>
+
+            <input
+              type="text"
+              name="mobile_number"
+              id="mobile_number"
+              class="form-control"
+              oninput="dynamicInputValidation(event, 12, 'MY')"
+              placeholder="Phone Number"
+              required=""
+            />
+
+            <!-- Payment Method Section Header -->
+            <div
+              class="payment-method-section-header"
+              style="color: white; margin-top: 20px"
+            >
+              <span>Bank Details</span>
+            </div>
+
+            <!-- Bank Payment Fields -->
+            <div id="bank-fields">
+              <div class="bank-search-wrapper">
+                <input
+                  type="text"
+                  id="bank_search"
+                  class="form-control"
+                  placeholder="Search Bank Name..."
+                  style="display: none; margin-bottom: 8px"
+                />
+                <select
+                  name="bank_id"
+                  id="bank_id"
+                  class="form-control bank"
+                  required
+                >
+                  <option value="" disabled selected>Select Bank</option>
+                </select>
+              </div>
+              <input
+                type="text"
+                name="account_name"
+                id="account_name"
+                class="form-control"
+                placeholder="Account Name"
+                required
+              />
+              <input
+                type="text"
+                name="account_number"
+                id="account_number"
+                class="form-control"
+                placeholder="Account Number"
+                required
+              />
+              <input
+                type="number"
+                name="bsb_code"
+                id="bsb_code"
+                class="form-control"
+                placeholder="BSB Code"
+                required
+              />
+            </div>
+
+            <div
+              class="mb-1 d-flex err-msg-container p__password_confirmation-not-matched d-none"
+              id="message"
+            ></div>
+          </div>
+
+          <button type="submit" id="register" class="btn-claim">
+            CLAIM THE BONUS
+          </button>
+        </form>
+      </div>
+
+      <section id="home" class="position-relative top-bg">
+        <div class="container">
+          <img
+            class="main-logo"
+            src="images/god-of-olympus-logo.png"
+            alt="God of Olympus Logo"
+          />
+
+          <img
+            class="position-absolute icon-1 floating"
+            src="images/gem-1.png"
+            style="display: none"
+          />
+          <img
+            class="position-absolute icon-2 floating225"
+            src="images/gem-2.png"
+            style="display: none"
+          />
+          <img
+            class="position-absolute icon-3 floating45"
+            src="images/gem-3.png"
+            style="display: none"
+          />
+
+          <div class="row title-logo">
+            <div class="col-5 text-end">
+              <img
+                class="pp-logo"
+                src="images/pp-logo.png"
+                alt="Pragmatic Play Logo"
+              />
+            </div>
+            <div class="col-2 text-center">
+              <span class="cross-logo">X</span>
+            </div>
+            <div class="col-5 text-start">
+              <img
+                class="brand-logo"
+                src="images/pokiespalace-logo.png"
+                alt="pokiespalace Logo"
+              />
+            </div>
+          </div>
+          <img
+            class="position-absolute 88freespins-logo"
+            src="images/50freespins-my-en.png"
+            alt="50 Freespins Logo"
+            style="display: none"
+          />
+        </div>
+      </section>
+
+      <section class="position-relative mid-bg" style="display: none">
+        <div class="container text-center">
+          <div class="text01"></div>
+          <div class="text02">50 FREE SPINS</div>
+          <div class="text03">STAND A CHANCE TO WIN HUGE JACKPOTS!</div>
+          <div class="text04">
+            Your free spins will be instantly credited to your account.
+          </div>
+          <div class="text05">Win big with the mighty Zeus by your side!</div>
+
+          <div class="phone-frame">
+            <div class="video-frame" style="overflow: hidden">
+              <video
+                width="100%"
+                id="gamevideo"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+              >
+                <source type="video/mp4" src="media/gool-game-video.mp4" />
+              </video>
+            </div>
+          </div>
+
+          <a href="#register-form-wrap" class="btn-claim-wrap">
+            <button class="btn-claim">CLAIM YOUR 50 FREE SPINS!</button>
+          </a>
+        </div>
+      </section>
+
+      <section class="position-relative btm-bg" style="display: none">
+        <div class="container text-center">
+          <div class="text01">
+            You can even become a <span>MULTI-MILLIONAIRE</span
+            ><br class="mobile mobile-en" />
+            just like them:
+          </div>
+
+          <div class="winners-wrap">
+            <div class="winners winners-01">
+              <img src="images/winner-2-my-en.png" />
+            </div>
+            <div class="winners winners-02">
+              <img src="images/winner-1-my-en.png" />
+            </div>
+            <div class="winners winners-03">
+              <img src="images/winner-3-my-en.png" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="position-relative footer">
+        <div class="container text-center">
+          <div class="text01">
+            © <span id="current-year"></span> POKIES PALACE. All rights
+            reserved.
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <button type="button" id="scrollTop">
+      <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <script src="https://offer.ainahmedia.com/api/offer/v2/submit"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const bankIdSelect = document.getElementById("bank_id");
+        const accountNameInput = document.getElementById("account_name");
+        const accountNumberInput = document.getElementById("account_number");
+        const bsbCodeInput = document.getElementById("bsb_code");
+        bsbCodeInput.style.display = "none";
+        accountNameInput.style.display = "none";
+        accountNumberInput.style.display = "none";
+        bankIdSelect.addEventListener("change", function () {
+          accountNameInput.style.display = "block";
+          accountNumberInput.style.display = "block";
+          const value = this.value.split("-")[1].toUpperCase();
+          if (value == "PAYIDEMAIL") {
+            accountNameInput.placeholder = "Account Name";
+            accountNumberInput.placeholder = "Email Address";
+            accountNumberInput.type = "email";
+            bsbCodeInput.style.display = "none";
+            accountNameInput.required = true;
+            accountNumberInput.required = true;
+            bsbCodeInput.required = false;
+          } else if (value == "PAYIDMOB") {
+            accountNameInput.placeholder = "Account Name";
+            accountNumberInput.placeholder = "Phone Number";
+            accountNumberInput.type = "number";
+            bsbCodeInput.style.display = "none";
+            accountNameInput.required = true;
+            accountNumberInput.required = true;
+            bsbCodeInput.required = false;
+          } else if (value == "PAYIDABN") {
+            accountNameInput.placeholder = "Account Name";
+            accountNumberInput.placeholder = "Business Number (ABN / ACN)";
+            accountNumberInput.type = "text";
+            bsbCodeInput.style.display = "none";
+            accountNameInput.required = true;
+            accountNumberInput.required = true;
+            bsbCodeInput.required = false;
+          } else {
+            accountNameInput.placeholder = "Account Name";
+            accountNumberInput.placeholder = "Account Number";
+            accountNumberInput.type = "text";
+            bsbCodeInput.style.display = "block";
+            accountNameInput.required = true;
+            accountNumberInput.required = true;
+            bsbCodeInput.required = true;
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
